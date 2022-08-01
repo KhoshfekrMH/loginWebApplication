@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -13,7 +14,8 @@ require "header.php"
 ?>
 
 <main>
-    
+    <p>You are logged in!</p>
+    <p>You are logged Out!</p>
 </main>
 
 <?php
