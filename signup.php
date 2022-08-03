@@ -3,7 +3,34 @@ require "header.php"
 ?>
 
 <link rel="stylesheet" href="style.css">
-<main>
+<main style="text-align: center; margin-top:20px;">
+  <h1>SignUp</h1>
+  <?php
+  if(isset($_GET['error'])){
+    if($_GET['error'] == "emptyfields"){
+      echo '<p style="color: red;">Fill in all fields</p>';
+    } 
+    else if($_GET['error'] == "invalidmailuid") {
+      echo '<p style="color: red;">Invalid username and E-Mail</p>';
+    }
+    else if($_GET['error'] == "invaliduid") {
+      echo '<p style="color: red;">Invalid Username</p>';
+    } 
+    else if($_GET['error'] == "invalidmail") {
+      echo '<p style="color: red;">Invalid E-Mail</p>';
+    } 
+    else if($_GET['error'] == "passwordcheck") {
+      echo '<p style="color: red;">Your Password do not match</p>'; 
+    }
+    else if($_GET['error'] == "usertaken") {
+      echo '<p style="color: red;">Username is already taken</p>';
+    } 
+  } 
+  else if($_GET["signup"] == "success") {
+    echo '<p style="color: green;">SignUp Successful!</p>';
+  }
+  ?>
+
   <form class="formCenter" action="includes/signup.inc.php" method="POST">
     <div class="form-floating">
       <input type="text" name="uid" class="form-control top" id="UserInput" placeholder="Username">
